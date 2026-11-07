@@ -10,7 +10,7 @@ import { validateInstallation } from "@/utils/validation"
 import { InstallationForm } from "@/components/InstallationForm"
 import { SiteHeader } from "@/components/SiteHeader"
 import { ForecastDaySelector } from "@/components/ForecastDaySelector"
-import { SimulatedSavingsCounter } from "@/components/SimulatedSavingsCounter"
+import { SolarPotentialIndicator } from "@/components/SolarPotentialIndicator"
 
 export function SolarCoach() {
   const [address, setAddress] = useState("")
@@ -225,10 +225,7 @@ export function SolarCoach() {
               </div>
             </div>
 
-            <SimulatedSavingsCounter
-              key={assessment.date}
-              productionRange={assessment.productionRange}
-            />
+            <SolarPotentialIndicator score={assessment.score} />
 
             <div className="mt-7">
               <div className="mb-3 flex items-end justify-between gap-3">
